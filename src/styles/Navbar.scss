@@ -1,0 +1,69 @@
+#navbar-container {
+  color: white;
+  display: flex;
+  width: 100%;
+  height: 10%;
+  margin: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-family: "BarlowCondensed";
+
+  #logo {
+    width: 3.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #line {
+    width: 25%;
+    height: 2px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.161);
+    z-index: 2;
+    margin-left: 4rem;
+    position: absolute;
+    left: 4rem;
+  }
+
+  #navbar {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 12rem;
+    backdrop-filter: blur(40.774227142333984px);
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: solid 3px transparent;
+      transition: border-bottom 400ms;
+
+      &:hover {
+        border-bottom: solid 3px white;
+        cursor: pointer;
+      }
+
+      p {
+        &:first-of-type {
+          font-family: "BarlowCondensed Light";
+          font-weight: 700;
+          font-size: 16px;
+        }
+        &:last-of-type {
+          font-family: "BarlowCondensed Light";
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
