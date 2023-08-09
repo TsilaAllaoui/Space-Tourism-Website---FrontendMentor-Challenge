@@ -53,12 +53,35 @@ const Destination = () => {
   ) => {
     const left = document.querySelector("#left") as HTMLDivElement;
     const right = document.querySelector("#right") as HTMLDivElement;
-    left.style.opacity = "0";
-    right.style.opacity = "0";
+
+    left.childNodes.forEach((element) => {
+      const child = element as HTMLElement;
+      if (child.id != "title") {
+        child.style.opacity = "0";
+      }
+    });
+
+    right.childNodes.forEach((element) => {
+      const child = element as HTMLElement;
+      if (child.id != "mini-nav") {
+        child.style.opacity = "0";
+      }
+    });
+
     setTimeout(() => {
-      left.style.opacity = "1";
-      right.style.opacity = "1";
       setCurrentPlanet(planets[index]);
+      left.childNodes.forEach((element) => {
+        const child = element as HTMLElement;
+        if (child.id != "title") {
+          child.style.opacity = "1";
+        }
+      });
+      right.childNodes.forEach((element) => {
+        const child = element as HTMLElement;
+        if (child.id != "mini-nav") {
+          child.style.opacity = "1";
+        }
+      });
     }, 500);
   };
 

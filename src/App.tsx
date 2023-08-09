@@ -4,6 +4,7 @@ import bgDesktop from "./assets/home/background-home-desktop.jpg";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
 import Destination from "./components/Destination";
+import Crew from "./components/Crew";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="destination" element={<Destination />} />
+          <Route path="crew" element={<Crew />} />
         </Route>
       </Routes>
     </div>
