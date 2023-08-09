@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Layout from "./components/Layout";
 import Destination from "./components/Destination";
 import Crew from "./components/Crew";
+import Tech from "./components/Tech";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="destination" element={<Destination />} />
           <Route path="crew" element={<Crew />} />
+          <Route path="technology" element={<Tech />} />
         </Route>
       </Routes>
     </div>

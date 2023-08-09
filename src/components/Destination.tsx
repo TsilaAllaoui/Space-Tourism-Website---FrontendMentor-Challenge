@@ -11,6 +11,7 @@ interface Planet {
   avgDist: string;
   eastTravelTime: string;
   index: number;
+  desc: string;
 }
 
 const Destination = () => {
@@ -21,6 +22,7 @@ const Destination = () => {
       avgDist: "384,400 KM",
       eastTravelTime: "3 DAYS",
       index: 0,
+      desc: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
     },
     {
       image: mars,
@@ -28,6 +30,7 @@ const Destination = () => {
       avgDist: "225 MIL. KM",
       eastTravelTime: "9 MONTHS",
       index: 1,
+      desc: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
     },
     {
       image: europa,
@@ -35,6 +38,7 @@ const Destination = () => {
       avgDist: "628 MIL. KM",
       eastTravelTime: "3 YEARS",
       index: 2,
+      desc: "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
     },
     {
       image: titan,
@@ -42,6 +46,7 @@ const Destination = () => {
       avgDist: "1.6 BIL. KM",
       eastTravelTime: "7 YEARS",
       index: 3,
+      desc: "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
     },
   ];
 
@@ -90,7 +95,7 @@ const Destination = () => {
       <div id="left">
         <div id="title">
           <h1>01</h1>
-          <h1> PICK YOUR DESTINATION</h1>
+          <h1>PICK YOUR DESTINATION</h1>
         </div>
         <img src={currentPlanet.image} alt="moon" />
       </div>
@@ -112,12 +117,7 @@ const Destination = () => {
           ))}
         </div>
         <p id="planet-name">{currentPlanet.name.toUpperCase()}</p>
-        <p id="desc">
-          See our planet as you’ve never seen it before. A perfect relaxing trip
-          away to help regain perspective and come back refreshed. While you’re
-          there, take in some history by visiting the Luna 2 and Apollo 11
-          landing sites.
-        </p>
+        <p id="desc">{currentPlanet.desc}</p>
         <div id="line"></div>
         <div id="distance">
           <div id="dist">

@@ -13,7 +13,7 @@ const Navbar = () => {
     index: number
   ) => {
     setCurrentNav(index);
-    navigate("/" + navItems[index].toLowerCase());
+    navigate("/" + (index == 0 ? "" : navItems[index].toLowerCase()));
   };
 
   const [currentNav, setCurrentNav] = useState(0);
