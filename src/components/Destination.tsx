@@ -3,7 +3,7 @@ import europa from "../assets/destination/image-europa.png";
 import mars from "../assets/destination/image-mars.png";
 import moon from "../assets/destination/image-moon.png";
 import titan from "../assets/destination/image-titan.png";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface Planet {
   image: string;
@@ -25,27 +25,42 @@ const Destination = () => {
     {
       image: mars,
       name: "mars",
-      avgDist: "384,400 KM",
-      eastTravelTime: "3 DAYS",
+      avgDist: "225 MIL. KM",
+      eastTravelTime: "9 MONTHS",
       index: 1,
     },
     {
       image: europa,
       name: "europa",
-      avgDist: "384,400 KM",
-      eastTravelTime: "3 DAYS",
+      avgDist: "628 MIL. KM",
+      eastTravelTime: "3 YEARS",
       index: 2,
     },
     {
       image: titan,
       name: "titan",
-      avgDist: "384,400 KM",
-      eastTravelTime: "3 DAYS",
+      avgDist: "1.6 BIL. KM",
+      eastTravelTime: "7 YEARS",
       index: 3,
     },
   ];
 
   const [currentPlanet, setCurrentPlanet] = useState<Planet>(planets[0]);
+
+  const handlePlanetChange = (
+    _e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    const left = document.querySelector("#left") as HTMLDivElement;
+    const right = document.querySelector("#right") as HTMLDivElement;
+    left.style.opacity = "0";
+    right.style.opacity = "0";
+    setTimeout(() => {
+      left.style.opacity = "1";
+      right.style.opacity = "1";
+      setCurrentPlanet(planets[index]);
+    }, 500);
+  };
 
   return (
     <div id="destination">
@@ -67,13 +82,14 @@ const Destination = () => {
                   index == currentPlanet.index ? "white" : "transparent"
                 }`,
               }}
+              onClick={(e) => handlePlanetChange(e, index)}
             >
               {planet.name.toUpperCase()}
             </div>
           ))}
         </div>
-        <p>{currentPlanet.name}</p>
-        <p>
+        <p id="planet-name">{currentPlanet.name.toUpperCase()}</p>
+        <p id="desc">
           See our planet as you’ve never seen it before. A perfect relaxing trip
           away to help regain perspective and come back refreshed. While you’re
           there, take in some history by visiting the Luna 2 and Apollo 11
@@ -83,7 +99,11 @@ const Destination = () => {
         <div id="distance">
           <div id="dist">
             <p>AVG. DISTANCE</p>
-            <p></p>
+            <p>{currentPlanet.avgDist}</p>
+          </div>
+          <div id="east-travel">
+            <p>EAST. TRAVEL TIME</p>
+            <p>{currentPlanet.eastTravelTime}</p>
           </div>
         </div>
       </div>

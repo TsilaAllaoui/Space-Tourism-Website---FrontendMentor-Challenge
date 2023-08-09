@@ -3,6 +3,9 @@
   color: white;
   width: 100%;
   height: 75%;
+  p {
+    margin: 0;
+  }
 
   #left {
     width: 50%;
@@ -11,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition: opacity 500ms ease-in-out;
 
     #title {
       display: flex;
@@ -33,31 +37,95 @@
   }
 
   #right {
-    width: 50%;
+    width: 35%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    transition: opacity 500ms linear;
 
     #mini-nav {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
       align-self: flex-start;
 
       .planet {
-        height: 2rem;
-        width: 4rem;
+        height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
         border-bottom: solid 3px transparent;
-        font-family: "BarlowCondensed";
-        font-weight: 500;
+        font-family: "BarlowCondensed Light";
+        font-weight: 100;
         font-size: 1.5rem;
 
         &:hover {
           border-bottom: solid 3px white;
+          color: rgb(187, 187, 187);
+          cursor: pointer;
+        }
+      }
+    }
+
+    #planet-name {
+      font-family: "Bellefair";
+      font-size: 8rem;
+      font-weight: 400;
+      margin: 1rem 0;
+    }
+
+    #desc {
+      color: #d0d6f9;
+      font-family: "Barlow";
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 32px;
+    }
+
+    #line {
+      width: 100%;
+      height: 2px;
+      background-color: rgba(128, 128, 128, 0.338);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    #distance {
+      width: 100%;
+      display: flex;
+      gap: 25%;
+      #dist {
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: 2.362px;
+
+        p {
+          &:first-of-type {
+            font-family: "BarlowCondensed";
+          }
+          &:last-of-type {
+            margin-top: 1rem;
+            font-family: "Bellefair";
+            font-size: 2rem;
+          }
+        }
+      }
+
+      #east-travel {
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: 2.362px;
+
+        p {
+          &:first-of-type {
+            font-family: "BarlowCondensed";
+          }
+          &:last-of-type {
+            margin-top: 1rem;
+            font-family: "Bellefair";
+            font-size: 2rem;
+          }
         }
       }
     }
