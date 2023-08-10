@@ -32,11 +32,13 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    const navbar = document.querySelector("#navbar") as HTMLElement;
-    if (!toggle) {
-      navbar.style.width = "0";
-    } else {
-      navbar.style.width = "75%";
+    if (window.screen.width <= 416) {
+      const navbar = document.querySelector("#navbar") as HTMLElement;
+      if (!toggle) {
+        navbar.style.width = "0";
+      } else {
+        navbar.style.width = "75%";
+      }
     }
   }, [toggle]);
 
