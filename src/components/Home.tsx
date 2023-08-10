@@ -6,7 +6,9 @@ const Home = () => {
 
   const showUnderlay = (val: boolean) => {
     const outer = document.querySelector("#outer-circle") as HTMLElement;
-    outer.style.animation = val ? "wiggle 1000ms infinite alternate" : "";
+    outer.style.animation = val
+      ? "wiggle 1000ms infinite alternate"
+      : "wiggle-out 1000ms forwards";
   };
 
   return (

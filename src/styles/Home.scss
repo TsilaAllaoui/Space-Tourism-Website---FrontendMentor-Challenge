@@ -11,6 +11,19 @@
   }
 }
 
+@keyframes wiggle-out {
+  from {
+    opacity: 0.75;
+    width: 20rem;
+    height: 20rem;
+  }
+  to {
+    opacity: 0;
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
 #home {
   display: flex;
   color: white;
@@ -78,7 +91,6 @@
       opacity: 0;
 
       &:hover {
-        opacity: 1;
         cursor: pointer;
       }
     }
