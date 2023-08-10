@@ -45,6 +45,11 @@
       align-items: center;
       height: 75%;
       gap: 5rem;
+      transition: opacity 500ms;
+
+      * {
+        transition: opacity 500ms;
+      }
 
       #numbers {
         height: 100%;
@@ -126,6 +131,7 @@
     background-repeat: no-repeat;
     background-size: auto;
     height: 74%;
+    transition: opacity 500ms;
   }
 }
 

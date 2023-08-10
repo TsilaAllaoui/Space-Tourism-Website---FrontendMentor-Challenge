@@ -43,12 +43,12 @@ const Tech = () => {
   ) => {
     if (index == currIndex) return;
     if (window.screen.width > 416) {
-      const desc = document.querySelector("#desc") as HTMLDivElement;
+      const entry = document.querySelector("#entry") as HTMLDivElement;
       const right = document.querySelector("#right") as HTMLDivElement;
       right.style.opacity = "0";
-      desc.childNodes.forEach((element) => {
+      entry.childNodes.forEach((element) => {
         const child = element as HTMLElement;
-        if (child.id != "title") {
+        if (child.id != "title" && child.id != "numbers") {
           child.style.opacity = "0";
         }
       });
@@ -68,12 +68,12 @@ const Tech = () => {
       setCurrIndex(index);
       setCurrentTech(techs[index]);
       if (window.screen.width > 416) {
-        const desc = document.querySelector("#desc") as HTMLDivElement;
+        const entry = document.querySelector("#entry") as HTMLDivElement;
         const right = document.querySelector("#right") as HTMLDivElement;
         right.style.opacity = "1";
-        desc.childNodes.forEach((element) => {
+        entry.childNodes.forEach((element) => {
           const child = element as HTMLElement;
-          if (child.id != "title" && child.id != "entry") {
+          if (child.id != "title" && child.id != "numbers") {
             child.style.opacity = "1";
           }
         });
