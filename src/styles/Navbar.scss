@@ -70,6 +70,11 @@
 @media (max-width: 416px) {
   #navbar-container {
     position: relative;
+    margin: 0;
+
+    #logo {
+      margin-left: 10%;
+    }
 
     #line {
       display: none;
@@ -77,12 +82,13 @@
 
     #menu-button {
       position: absolute;
-      right: 25%;
+      right: 10%;
       z-index: 2;
+      color: #d0d6f9;
 
       svg {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2rem;
+        height: 2rem;
       }
     }
 
