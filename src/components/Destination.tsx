@@ -57,6 +57,7 @@ const Destination = () => {
     _e: React.MouseEvent<HTMLDivElement>,
     index: number
   ) => {
+    if (index == currentIndex) return;
     const left = document.querySelector("#left") as HTMLDivElement;
     const right = document.querySelector("#right") as HTMLDivElement;
 

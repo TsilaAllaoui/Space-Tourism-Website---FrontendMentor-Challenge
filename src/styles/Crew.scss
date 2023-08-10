@@ -114,11 +114,15 @@
 
       #title {
         width: 100%;
+        display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0;
 
         h1 {
-          margin-bottom: 2rem;
+          font-size: 1rem;
+          letter-spacing: 2.7px;
+          margin: 1rem 0;
         }
       }
 
@@ -137,22 +141,31 @@
       }
 
       #indicator {
-        height: 5rem;
+        height: 1rem;
         flex-grow: unset;
+        margin: 1rem 0;
+
+        .dot {
+          height: 0.75rem;
+          width: 0.75rem;
+        }
       }
 
       #position {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
       }
 
       #crew-name {
-        font-size: 1.75rem;
+        font-size: 1.7rem;
       }
 
       #bio {
         width: 90%;
         color: #d0d6f9;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        line-height: 1.25rem;
       }
     }
   }

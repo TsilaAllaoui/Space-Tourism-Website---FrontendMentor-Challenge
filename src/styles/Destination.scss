@@ -159,13 +159,13 @@
         margin: 0;
 
         h1 {
-          font-size: 1.5rem;
+          font-size: 1rem;
           letter-spacing: 2.7px;
         }
       }
 
       img {
-        width: 50%;
+        width: 45%;
       }
     }
 
@@ -184,16 +184,17 @@
 
       #planet-name {
         width: 100%;
-        font-size: 4.5rem;
+        font-size: 4rem;
         text-align: center;
         margin: 1rem 0;
       }
 
       #desc {
         width: 95%;
-        height: 10rem;
+        height: 5rem;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+        line-height: 1rem;
       }
 
       #line {
@@ -209,11 +210,18 @@
 
         #dist,
         #east-travel {
-          height: 5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
           p {
             &:first-of-type {
-              font-size: 1rem;
+              font-size: 0.75rem;
               color: #a9adc0;
+            }
+            &:last-of-type {
+              margin: 0;
+              font-size: 1.25rem;
             }
           }
         }

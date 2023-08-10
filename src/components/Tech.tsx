@@ -41,6 +41,7 @@ const Tech = () => {
     _e: React.MouseEvent<HTMLDivElement>,
     index: number
   ) => {
+    if (index == currIndex) return;
     if (window.screen.width > 416) {
       const desc = document.querySelector("#desc") as HTMLDivElement;
       const right = document.querySelector("#right") as HTMLDivElement;

@@ -47,6 +47,7 @@ const Crew = () => {
     _e: React.MouseEvent<HTMLDivElement>,
     index: number
   ) => {
+    if (index == currIndex) return;
     const left = document.querySelector("#left") as HTMLDivElement;
     left.childNodes.forEach((element) => {
       const child = element as HTMLElement;
