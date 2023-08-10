@@ -88,7 +88,20 @@ const Crew = () => {
               className="dot"
               key={index}
               onClick={(e) => handleCrewSelection(e, index)}
-              style={{ backgroundColor: index == currIndex ? "white" : "grey" }}
+              style={{
+                backgroundColor:
+                  index == currIndex ? "white" : "rgba(128, 128, 128, 0.2)",
+              }}
+              onMouseEnter={(e) => {
+                if (index != currIndex)
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(128, 128, 128, 1)";
+              }}
+              onMouseLeave={(e) => {
+                if (index != currIndex)
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(128, 128, 128, 0.2)";
+              }}
             ></div>
           ))}
         </div>

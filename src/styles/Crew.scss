@@ -82,6 +82,7 @@
         height: 1rem;
         border-radius: 100%;
         background-color: rgba(128, 128, 128, 0.405);
+        transition: background-color 500ms;
 
         &:hover {
           cursor: pointer;

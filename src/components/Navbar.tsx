@@ -39,7 +39,21 @@ const Navbar = () => {
           <div
             className="nav-item"
             key={index}
+            style={{
+              borderBottom:
+                index == currentNav
+                  ? "solid 3px white"
+                  : "solid 3px transparent",
+            }}
             onClick={(e) => handleNavigate(e, index)}
+            onMouseEnter={(e) => {
+              if (index != currentNav)
+                e.currentTarget.style.borderBottom = "solid 3px grey";
+            }}
+            onMouseLeave={(e) => {
+              if (index != currentNav)
+                e.currentTarget.style.borderBottom = "solid 3px transparent";
+            }}
           >
             <p>0{index}</p>
             <p>{item}</p>

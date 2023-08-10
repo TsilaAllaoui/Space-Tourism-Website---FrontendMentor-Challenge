@@ -32,6 +32,35 @@ const Tech = () => {
   const [currentTech, setCurrentTech] = useState<Technology>(techs[0]);
   const [currIndex, setCurrIndex] = useState(0);
 
+  const handleTechSelection = (
+    _e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    const desc = document.querySelector("#desc") as HTMLDivElement;
+    const right = document.querySelector("#right") as HTMLDivElement;
+
+    desc.childNodes.forEach((element) => {
+      const child = element as HTMLElement;
+      if (child.id != "title") {
+        child.style.opacity = "0";
+      }
+    });
+
+    right.style.opacity = "0";
+
+    setTimeout(() => {
+      setCurrIndex(index);
+      setCurrentTech(techs[index]);
+      desc.childNodes.forEach((element) => {
+        const child = element as HTMLElement;
+        if (child.id != "title" && child.id != "entry") {
+          child.style.opacity = "1";
+        }
+      });
+      right.style.opacity = "1";
+    }, 500);
+  };
+
   return (
     <div id="tech">
       <div id="left">
@@ -51,9 +80,15 @@ const Tech = () => {
                         ? "white"
                         : "rgba(128, 128, 128, 0.534)",
                   }}
-                  onClick={() => {
-                    setCurrIndex(index);
-                    setCurrentTech(techs[index]);
+                  onClick={(e) => handleTechSelection(e, index)}
+                  onMouseEnter={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor = "black";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 0.534)";
                   }}
                 >
                   <div

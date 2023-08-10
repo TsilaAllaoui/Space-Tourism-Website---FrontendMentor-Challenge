@@ -51,6 +51,7 @@ const Destination = () => {
   ];
 
   const [currentPlanet, setCurrentPlanet] = useState<Planet>(planets[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePlanetChange = (
     _e: React.MouseEvent<HTMLDivElement>,
@@ -75,6 +76,7 @@ const Destination = () => {
 
     setTimeout(() => {
       setCurrentPlanet(planets[index]);
+      setCurrentIndex(index);
       left.childNodes.forEach((element) => {
         const child = element as HTMLElement;
         if (child.id != "title") {
@@ -111,6 +113,14 @@ const Destination = () => {
                 }`,
               }}
               onClick={(e) => handlePlanetChange(e, index)}
+              onMouseEnter={(e) => {
+                if (index != currentIndex)
+                  e.currentTarget.style.borderBottom = "solid 3px grey";
+              }}
+              onMouseLeave={(e) => {
+                if (index != currentIndex)
+                  e.currentTarget.style.borderBottom = "solid 3px transparent";
+              }}
             >
               {planet.name.toUpperCase()}
             </div>
