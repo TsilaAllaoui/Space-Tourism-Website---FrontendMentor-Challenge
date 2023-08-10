@@ -162,3 +162,38 @@
     }
   }
 }
+
+@media (min-width: 417px) and (max-width: 914px) {
+  #home {
+    flex-direction: column;
+
+    #left,
+    #right {
+      width: 100%;
+      align-items: center;
+    }
+
+    #left {
+      align-items: center;
+      h1 {
+        text-align: center;
+        width: 100%;
+      }
+
+      p {
+        &:first-of-type {
+          width: 100%;
+          font-size: 10rem;
+          text-align: center;
+        }
+
+        &:last-of-type {
+          margin-top: 2rem;
+          width: 60%;
+          text-align: center;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -131,3 +131,36 @@
     }
   }
 }
+
+@media (min-width: 417px) and (max-width: 914px) {
+  #navbar-container {
+    #line {
+      display: none;
+    }
+
+    #logo {
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    #navbar {
+      background-color: #8080800f;
+      width: 35svw;
+      justify-content: center;
+      gap: 2rem;
+
+      .nav-item {
+        p {
+          &:first-of-type {
+            font-size: 1.5rem;
+          }
+          &:last-of-type {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

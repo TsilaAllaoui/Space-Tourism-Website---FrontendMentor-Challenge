@@ -1,6 +1,6 @@
 import "../styles/Navbar.scss";
 import logo from "../assets/shared/logo.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -41,6 +41,14 @@ const Navbar = () => {
       }
     }
   }, [toggle]);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname == "/destination") {
+      setCurrentNav(1);
+    }
+  }, [location]);
 
   return (
     <div id="navbar-container">

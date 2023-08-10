@@ -20,17 +20,17 @@ const Tech = () => {
     {
       name: "LAUNCH VEHICLE",
       desc: "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
-      image: window.screen.width <= 416 ? launchVehicleMobile : launchVehicle,
+      image: window.screen.width <= 914 ? launchVehicleMobile : launchVehicle,
     },
     {
       name: "SPACEPORT",
       desc: "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
-      image: window.screen.width <= 416 ? spacePortMobile : spacePort,
+      image: window.screen.width <= 914 ? spacePortMobile : spacePort,
     },
     {
       name: "SPACE CAPSULE",
       desc: "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
-      image: window.screen.width <= 416 ? spaceCapsuleMobile : spaceCapsule,
+      image: window.screen.width <= 914 ? spaceCapsuleMobile : spaceCapsule,
     },
   ];
 
@@ -42,7 +42,7 @@ const Tech = () => {
     index: number
   ) => {
     if (index == currIndex) return;
-    if (window.screen.width > 416) {
+    if (window.screen.width > 914) {
       const entry = document.querySelector("#entry") as HTMLDivElement;
       const right = document.querySelector("#right") as HTMLDivElement;
       right.style.opacity = "0";
@@ -67,7 +67,7 @@ const Tech = () => {
     setTimeout(() => {
       setCurrIndex(index);
       setCurrentTech(techs[index]);
-      if (window.screen.width > 416) {
+      if (window.screen.width > 914) {
         const entry = document.querySelector("#entry") as HTMLDivElement;
         const right = document.querySelector("#right") as HTMLDivElement;
         right.style.opacity = "1";
@@ -93,7 +93,7 @@ const Tech = () => {
 
   return (
     <div id="tech">
-      {window.screen.width > 416 ? (
+      {window.screen.width > 914 ? (
         <>
           <div id="left">
             <div id="title">

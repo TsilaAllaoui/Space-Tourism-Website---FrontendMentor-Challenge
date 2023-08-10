@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import bgDesktop from "./assets/home/background-home-desktop.jpg";
 import bgMobile from "./assets/home/background-home-mobile.jpg";
+import bgTablet from "./assets/home/background-home-tablet.jpg";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
 import Destination from "./components/Destination";
@@ -14,7 +15,11 @@ function App() {
       id="app"
       style={{
         backgroundImage: `url(${
-          window.screen.width <= 416 ? bgMobile : bgDesktop
+          window.screen.width <= 416
+            ? bgMobile
+            : window.screen.width > 914
+            ? bgDesktop
+            : bgTablet
         })`,
       }}
     >

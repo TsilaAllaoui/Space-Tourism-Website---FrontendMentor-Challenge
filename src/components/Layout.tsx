@@ -20,21 +20,21 @@ const Layout = () => {
     const app = document.querySelector("#app") as HTMLDivElement;
     if (location.pathname == "/" || location.pathname == "/home") {
       app.style.backgroundImage =
-        "url(" + (window.screen.width <= 416 ? bgMobile : bgDesktop) + ")";
+        "url(" + (window.screen.width <= 914 ? bgMobile : bgDesktop) + ")";
     } else if (location.pathname == "/destination") {
       app.style.backgroundImage =
         "url(" +
-        (window.screen.width <= 416 ? destBgMobile : destBgDesktop) +
+        (window.screen.width <= 914 ? destBgMobile : destBgDesktop) +
         ")";
     } else if (location.pathname == "/crew") {
       app.style.backgroundImage =
         "url(" +
-        (window.screen.width <= 416 ? crewBgMobile : crewBgDesktop) +
+        (window.screen.width <= 914 ? crewBgMobile : crewBgDesktop) +
         ")";
     } else if (location.pathname == "/technology") {
       app.style.backgroundImage =
         "url(" +
-        (window.screen.width <= 416 ? techBgMobile : techBgDesktop) +
+        (window.screen.width <= 914 ? techBgMobile : techBgDesktop) +
         ")";
     }
   }, [location]);
