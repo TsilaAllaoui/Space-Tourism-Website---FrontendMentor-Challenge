@@ -48,8 +48,6 @@ const Crew = () => {
     index: number
   ) => {
     const left = document.querySelector("#left") as HTMLDivElement;
-    const right = document.querySelector("#right") as HTMLDivElement;
-
     left.childNodes.forEach((element) => {
       const child = element as HTMLElement;
       if (child.id != "title" && child.id != "indicator") {
@@ -57,61 +55,113 @@ const Crew = () => {
       }
     });
 
-    right.style.opacity = "0";
+    if (window.screen.width > 416) {
+      const right = document.querySelector("#right") as HTMLDivElement;
+      right.style.opacity = "0";
+    }
 
     setTimeout(() => {
       setCurrentCrew(crew[index]);
       setcurrIndex(index);
       left.childNodes.forEach((element) => {
         const child = element as HTMLElement;
-        if (child.id != "title") {
+        if (window.screen.width > 416 && child.id != "title") {
           child.style.opacity = "1";
-        }
+        } else child.style.opacity = "1";
       });
-      right.style.opacity = "1";
+      if (window.screen.width > 416) {
+        const right = document.querySelector("#right") as HTMLDivElement;
+        right.style.opacity = "1";
+      }
     }, 500);
   };
 
   return (
     <div id="crew">
-      <div id="left">
-        <div id="title">
-          <h1>02</h1>
-          <h1>MEET YOUR CREW</h1>
-        </div>
-        <h1 id="position">{currentCrew.position}</h1>
-        <p id="crew-name">{currentCrew.name}</p>
-        <p id="bio">{currentCrew.bio}</p>
-        <div id="indicator">
-          {[0, 1, 2, 3].map((index) => (
+      {window.screen.width > 416 ? (
+        <>
+          <div id="left">
+            <div id="title">
+              <h1>02</h1>
+              <h1>MEET YOUR CREW</h1>
+            </div>
+            <h1 id="position">{currentCrew.position}</h1>
+            <p id="crew-name">{currentCrew.name}</p>
+            <p id="bio">{currentCrew.bio}</p>
+            <div id="indicator">
+              {[0, 1, 2, 3].map((index) => (
+                <div
+                  className="dot"
+                  key={index}
+                  onClick={(e) => handleCrewSelection(e, index)}
+                  style={{
+                    backgroundColor:
+                      index == currIndex ? "white" : "rgba(128, 128, 128, 0.2)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 0.2)";
+                  }}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div
+            id="right"
+            style={{
+              backgroundImage: `url(${currentCrew.image}`,
+            }}
+          ></div>
+        </>
+      ) : (
+        <>
+          <div id="left">
+            <div id="title">
+              <h1>02</h1>
+              <h1>MEET YOUR CREW</h1>
+            </div>
             <div
-              className="dot"
-              key={index}
-              onClick={(e) => handleCrewSelection(e, index)}
+              id="picture"
               style={{
-                backgroundColor:
-                  index == currIndex ? "white" : "rgba(128, 128, 128, 0.2)",
-              }}
-              onMouseEnter={(e) => {
-                if (index != currIndex)
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(128, 128, 128, 1)";
-              }}
-              onMouseLeave={(e) => {
-                if (index != currIndex)
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(128, 128, 128, 0.2)";
+                backgroundImage: `url(${currentCrew.image}`,
               }}
             ></div>
-          ))}
-        </div>
-      </div>
-      <div
-        id="right"
-        style={{
-          backgroundImage: `url(${currentCrew.image}`,
-        }}
-      ></div>
+            <div id="line"></div>
+            <div id="indicator">
+              {[0, 1, 2, 3].map((index) => (
+                <div
+                  className="dot"
+                  key={index}
+                  onClick={(e) => handleCrewSelection(e, index)}
+                  style={{
+                    backgroundColor:
+                      index == currIndex ? "white" : "rgba(128, 128, 128, 0.2)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (index != currIndex)
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(128, 128, 128, 0.2)";
+                  }}
+                ></div>
+              ))}
+            </div>
+            <h1 id="position">{currentCrew.position}</h1>
+            <p id="crew-name">{currentCrew.name}</p>
+            <p id="bio">{currentCrew.bio}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
