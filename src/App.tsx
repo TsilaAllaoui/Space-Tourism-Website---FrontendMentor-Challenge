@@ -25,6 +25,7 @@ function App() {
           <Route path="destination" element={<Destination />} />
           <Route path="crew" element={<Crew />} />
           <Route path="technology" element={<Tech />} />
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
     </div>
