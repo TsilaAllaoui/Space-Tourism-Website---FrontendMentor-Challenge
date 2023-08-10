@@ -4,6 +4,11 @@ import "../styles/Home.scss";
 const Home = () => {
   const navigate = useNavigate();
 
+  const showUnderlay = (val: boolean) => {
+    const outer = document.querySelector("#outer-circle") as HTMLElement;
+    outer.style.animation = val ? "wiggle 1000ms infinite alternate" : "";
+  };
+
   return (
     <div id="home">
       <div id="left">
@@ -17,11 +22,14 @@ const Home = () => {
         </p>
       </div>
       <div id="right">
+        <div id="outer-circle"></div>
         <div
           id="circle"
           onClick={() => {
             navigate("destination");
           }}
+          onMouseEnter={() => showUnderlay(true)}
+          onMouseLeave={() => showUnderlay(false)}
         >
           <p>EXPLORE</p>
         </div>

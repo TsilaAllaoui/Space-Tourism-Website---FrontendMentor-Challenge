@@ -1,3 +1,16 @@
+@keyframes wiggle {
+  from {
+    opacity: 0;
+    width: 15rem;
+    height: 15rem;
+  }
+  to {
+    opacity: 0.75;
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
 #home {
   display: flex;
   color: white;
@@ -53,6 +66,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    #outer-circle {
+      position: absolute;
+      width: 20rem;
+      height: 20rem;
+      background-color: white;
+      border-radius: 100%;
+      transition: opacity 500ms;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
 
     #circle {
       border-radius: 100%;
@@ -61,6 +90,11 @@
       width: 15rem;
       display: grid;
       place-content: center;
+      z-index: 5;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       p {
         color: black;
