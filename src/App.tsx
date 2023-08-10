@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import bgDesktop from "./assets/home/background-home-desktop.jpg";
+import bgMobile from "./assets/home/background-home-mobile.jpg";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
 import Destination from "./components/Destination";
@@ -9,7 +10,14 @@ import Tech from "./components/Tech";
 
 function App() {
   return (
-    <div id="app" style={{ backgroundImage: `url(${bgDesktop})` }}>
+    <div
+      id="app"
+      style={{
+        backgroundImage: `url(${
+          window.screen.width <= 416 ? bgMobile : bgDesktop
+        })`,
+      }}
+    >
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

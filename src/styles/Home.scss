@@ -73,3 +73,43 @@
     }
   }
 }
+
+@media (max-width: 416px) {
+  #home {
+    height: 75%;
+
+    flex-direction: column;
+    #left {
+      width: 100%;
+      align-items: center;
+
+      h1 {
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 2.7px;
+      }
+
+      p {
+        &:first-of-type {
+          width: 100%;
+          font-size: 7rem;
+          text-align: center;
+        }
+
+        &:last-of-type {
+          width: 90%;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+
+    #right {
+      #circle {
+        width: 45svw;
+        height: 45svw;
+      }
+    }
+  }
+}

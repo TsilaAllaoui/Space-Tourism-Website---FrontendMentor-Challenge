@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/Home.scss";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div id="home">
       <div id="left">
@@ -14,7 +17,12 @@ const Home = () => {
         </p>
       </div>
       <div id="right">
-        <div id="circle">
+        <div
+          id="circle"
+          onClick={() => {
+            navigate("destination");
+          }}
+        >
           <p>EXPLORE</p>
         </div>
       </div>
